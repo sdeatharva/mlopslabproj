@@ -1,0 +1,26 @@
+﻿# Python virtual environments & caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Datasets managed by DVC (do not commit to Git)
+data/raw/train.csv
+data/raw/later.csv
+
+# Holdout features MUST be tracked by Git as per handbook
+!data/raw/holdout_features.csv
+
+# MLflow artifacts (keep mlflow.db committed, ignore heavy folders)
+mlruns/
+mlartifacts/
+
+# OS and Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.zip
