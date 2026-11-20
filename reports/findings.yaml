@@ -9,33 +9,33 @@ data_issues:
   # For each of the 7 kinds: present: true or false.
   # If present is false, leave the other values as null.
   leaking_column:
-    present: null
+    present: false
     column: null           # the column that must not be used as a feature
   unit_mixup:
-    present: null
-    column: null           # the column recorded in a different unit
-    group_value: null      # the value of harbour whose rows are affected
-    factor: null           # wrong value = right value x factor
+    present: true
+    column: "distance_from_shore_km"           # the column recorded in a different unit
+    group_value: "North Jetty"      # the value of harbour whose rows are affected
+    factor: 1000           # wrong value = right value x factor
   sentinel_value:
-    present: null
-    column: null
-    value: null            # the special number typed instead of a blank
-    count: null            # how many rows have it
+    present: true
+    column: "crew"
+    value: -1            # the special number typed instead of a blank
+    count: 37            # how many rows have it
   duplicate_rows:
-    present: null
-    count: null            # number of EXTRA copies (rows you would delete)
+    present: true
+    count: 30            # number of EXTRA copies (rows you would delete)
   stuck_sensor:
-    present: null
-    column: null
-    start_date: null       # first date with the stuck value, YYYY-MM-DD
-    end_date: null         # last date with the stuck value, YYYY-MM-DD
+    present: true
+    column: "wave_height_m"
+    start_date: "2026-04-19"       # first date with the stuck value, YYYY-MM-DD
+    end_date: "2026-05-09"         # last date with the stuck value, YYYY-MM-DD
   target_typos:
-    present: null
+    present: false
     count: null            # rows whose target was typed 10 times too big
   spelling_variants:
-    present: null
-    column: null
-    true_levels: null      # how many real categories there are after cleaning
+    present: true
+    column: "boat"
+    true_levels: 3      # how many real categories there are after cleaning
 
 tracking:
   experiment_name: null
